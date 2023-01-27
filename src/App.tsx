@@ -3,10 +3,10 @@ import "./App.css";
 import Deck from "./Deck";
 import data from "./data/data.json";
 import logo from "./logo.png";
-import twitterLogo from "./twitter-square-color-icon.svg";
-import linkedinLogo from "./linkedin-square-color-icon.svg";
-import discordLogo from "./discord-icon.svg";
-import instaLogo from "./ig-instagram-icon.svg";
+// import twitterLogo from "./twitter-square-color-icon.svg";
+// import linkedinLogo from "./linkedin-square-color-icon.svg";
+// import discordLogo from "./discord-icon.svg";
+// import instaLogo from "./ig-instagram-icon.svg";
 import { type MoxfieldDeck } from "./deck-types";
 
 function App() {

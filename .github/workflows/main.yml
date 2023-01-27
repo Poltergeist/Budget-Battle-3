@@ -1,4 +1,4 @@
-name: Build and deploy decktree
+name: Build and deploy Budget Battle 2
 
 on:
   push:
