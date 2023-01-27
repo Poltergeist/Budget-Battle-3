@@ -21,9 +21,6 @@ function App() {
           <li>
             <a href="#deck-lists">Deck Lists</a>
           </li>
-          <li>
-            <a href="#social-links">Social Links</a>
-          </li>
         </ul>
       </nav>
       <section id="deck-lists">
@@ -33,41 +30,6 @@ function App() {
             <Deck key={`deck-${deck.id}`} deck={deck} />
           ))}
         </div>
-      </section>
-      <section className="social-links" id="social-links">
-        <h2>Social links</h2>
-        <ul>
-          <li>
-            <a href="https://twitter.com/Sp3c1/">
-              <img src={twitterLogo} alt="twitter Logo" className="icon" />
-              Find me on Twitter
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/philipp-hinrichsen-47068b14/">
-              <img src={linkedinLogo} alt="twitter Logo" className="icon" />
-              Find me on Linkedin
-            </a>
-          </li>
-          <li>
-            <a href="https://www.moxfield.com/users/sp3c1">
-              Find me on Moxfield
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/sp3c1_/">
-              <img src={instaLogo} alt="twitter Logo" className="icon" />
-              Find me on instagram
-            </a>
-          </li>
-          <li>
-            <img src={discordLogo} alt="twitter Logo" className="icon" />
-            Find me on Discord as <pre>sp3c1#9062</pre>
-          </li>
-          <li>
-            <a href="#top">Go to Top</a>
-          </li>
-        </ul>
       </section>
     </div>
   );
