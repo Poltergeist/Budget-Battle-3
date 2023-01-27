@@ -24,6 +24,9 @@
   padding: 0 0.5rem;
 }
 
+#deck-lists {
+  min-height: 100vh
+}
 @media only screen and (min-width: 600px) {
   .deck-grid {
     grid-template-columns: repeat(2, 1fr);
