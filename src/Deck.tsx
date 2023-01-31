@@ -35,6 +35,7 @@ function Deck({ deck }: { deck: MoxfieldDeck }) {
           ))}
         </section>
         <h3>{deck.name}</h3>
+        <h4>by {deck.creator}</h4>
         <p>{deck.description}</p>
         <p><a ref={link} href={deck.publicUrl} target="_blank"  rel="noreferrer" onClick={stopBubble}>Visit Decklist</a></p>
       </header>
