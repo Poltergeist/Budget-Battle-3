@@ -1,6 +1,9 @@
 import data from "./data.json" assert { type: "json" };
 import fetch from "node-fetch";
 import fs from "fs";
+import { RateLimit } from 'async-sema';
+
+const limit = RateLimit(10);
 
 fs.writeFileSync(
   "./src/data/data.json",
@@ -19,6 +22,7 @@ fs.writeFileSync(
                 publicUrl: result.publicUrl,
                 commanders: await Promise.all(
                   Object.values(result.commanders).map(async (commander) => {
+                    await limit();
                     return {
                       scryfall_id: commander.card.scryfall_id,
                       art_crop: await fetch(
@@ -37,6 +41,7 @@ fs.writeFileSync(
                 ),
                 companions: await Promise.all(
                   Object.values(result.companions).map(async (companion) => {
+                    await limit();
                     return {
                       scryfall_id: companion.card.scryfall_id,
                       art_crop: await fetch(
