@@ -1,7 +1,7 @@
 import data from "./data.json" assert { type: "json" };
 import fetch from "node-fetch";
 import fs from "fs";
-import { RateLimit } from 'async-sema';
+import { RateLimit } from "async-sema";
 
 const limit = RateLimit(10);
 
@@ -9,7 +9,7 @@ fs.writeFileSync(
   "./src/data/data.json",
   JSON.stringify(
     {
-      decks: await Promise.all(
+      decks: (await Promise.all(
         data.decks.map(
           async (x) =>
             await fetch(`https://api2.moxfield.com/v2/decks/all/${x.id}`)
@@ -59,8 +59,9 @@ fs.writeFileSync(
                   })
                 ),
               }))
+              .catch((e) => console.log(e))
         )
-      ),
+      )).filter(x => x != null),
     },
     null,
     2
