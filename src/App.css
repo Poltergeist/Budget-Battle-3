@@ -16,7 +16,7 @@
 }
 .social-links li {
   list-style-type: persian;
-  margin:0.5rem;
+  margin: 0.5rem;
 }
 .social-links pre {
   display: inline;
@@ -24,8 +24,9 @@
   padding: 0 0.5rem;
 }
 
-#deck-lists {
-  min-height: 100vh
+#deck-lists,
+#card-analysis {
+  min-height: 100vh;
 }
 @media only screen and (min-width: 600px) {
   .deck-grid {

@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
 import Deck from "./Deck";
+import CardAnalysis from "./CardAnalysis";
 import data from "./data/data.json";
+import cardData from "./data/card-data.json";
 import logo from "./logo.png";
 // import twitterLogo from "./twitter-square-color-icon.svg";
 // import linkedinLogo from "./linkedin-square-color-icon.svg";
@@ -21,6 +23,9 @@ function App() {
           <li>
             <a href="#deck-lists">Deck Lists</a>
           </li>
+          <li>
+            <a href="#card-analysis">Card Analysis</a>
+          </li>
         </ul>
       </nav>
       <section id="deck-lists">
@@ -30,6 +35,14 @@ function App() {
             <Deck key={`deck-${deck.id}`} deck={deck} />
           ))}
         </div>
+      </section>
+      <section id="card-analysis">
+        <h2>Card Analysis</h2>
+        <p>
+          {cardData.length} Cards have been used in {decks.length} Decks.
+        </p>
+        <h3>Card in Decks</h3>
+        <CardAnalysis data={cardData} />
       </section>
     </div>
   );
