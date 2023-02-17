@@ -65,7 +65,7 @@ fs.writeFileSync(
                     })
                   ),
                 }))
-                .catch((e) => console.log(e))
+                .catch((e) => console.log(e, x, "not found"))
           )
         )
       ).filter((x) => x != null),
