@@ -1,10 +1,10 @@
-name: Build and deploy Budget Battle 2
+name: Build and deploy Budget Battle 3
 
 on:
   schedule:
-    - cron:  '30 6,18 * * *'
+    - cron: "30 6,18 * * *"
   push:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -21,7 +21,6 @@ defaults:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,21 +28,21 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: install dependencies
-      run: npm ci
-    - name: fetch data
-      run: node fetchData.mjs
-    - run: npm run build --if-present
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: ./build
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install dependencies
+        run: npm ci
+      - name: fetch data
+        run: node fetchData.mjs
+      - run: npm run build --if-present
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
 
   deploy:
     environment:
